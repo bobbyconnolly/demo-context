@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from 'react-router-dom'
+import { HomePage } from './HomePage'
+import { ProfilePage } from './ProfilePage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = (props) => {
+    console.log(props)
+
+    return (
+        <Switch>
+            <Route exact path="/">
+                <HomePage />
+            </Route>
+            <Route exact path="/profile">
+                <ProfilePage />
+            </Route>
+        </Switch>
+    )
 }
-
-export default App;
